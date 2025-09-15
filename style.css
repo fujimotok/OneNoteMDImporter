@@ -11,3 +11,40 @@
     font-family: Consolas, monospace;
     background-color: #F0F8FF;
 }
+
+/* OneNoteÇÃÉXÉ^ÉCÉãÇ…çáÇÌÇπÇÈ */
+h1 {
+    font-size: 16pt;
+    font-weight: normal;
+    color: #1E4E79;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: normal;
+    color: #2E75B5;
+}
+
+h3 {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #5B9BD5;
+}
+
+h4 {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #5B9BD5;
+}
+
+h5 {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #2E75B5;
+}
+
+h6 {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #2E75B5;
+}
