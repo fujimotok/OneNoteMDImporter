@@ -32,14 +32,15 @@ namespace OneNoteMDImporter
             mdfilepath = Path.GetFullPath(mdfilepath);
             string body = MarkdownOperator.ConvertMarkdownToHtml(mdfilepath, File.ReadAllText(mdfilepath));
             string title = Path.GetFileNameWithoutExtension(mdfilepath);
+            string style = File.ReadAllText("style.css");
 
-            Func<string, string> contentXmlBuilder = (id) => BuildPageContentXml(id, x, y, width, height, title, body);
+            Func<string, string> contentXmlBuilder = (id) => BuildPageContentXml(id, x, y, width, height, title, style, body);
             OneNoteOperator.CreatePageInSection(notebook, section, contentXmlBuilder);
         }
 
         // テンプレート生成関数
         // @ref https://github.com/stevencohn/OneMore/blob/main/OneMore/Commands/Edit/ConvertMarkdownCommand.cs
-        private static string BuildPageContentXml(string id, double px, double py, double w, double h, string t, string b)
+        private static string BuildPageContentXml(string id, double px, double py, double w, double h, string t, string s, string b)
         {
             return $@"
 <one:Page xmlns:one='http://schemas.microsoft.com/office/onenote/2013/onenote' ID='{id}'>
@@ -54,7 +55,10 @@ namespace OneNoteMDImporter
     <one:OEChildren>
         <one:HTMLBlock>
           <one:Data><![CDATA[
-            <html><body>{b}</body></html>
+            <html>
+              <head><style>{s}</style></head>
+              <body>{b}</body>
+            </html>
           ]]></one:Data>
         </one:HTMLBlock>
     </one:OEChildren>
