@@ -1,3 +1,13 @@
-h1 {
-    color: blue;
+:root {
+    /* var‚Íg‚¦‚È‚¢‚ªA’è”‚ÌˆÓ–¡‚ğ’è‹`‚µ‚Ä‚¨‚­ */
+    --code-background-color: #F0F8FF;
+}
+
+.code-block {
+    background-color: #F0F8FF;
+}
+
+.inline-code-block {
+    font-family: Consolas, monospace;
+    background-color: #F0F8FF;
 }
